@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar After Scrolling</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 2000px; /* For scrolling effect */
+        }
+
+        .navbar {
+            position: relative; /* Initially, normal positioning */
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        .navbar.sticky {
+            position: fixed; /* Makes navbar fixed when sticky */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensure full width when fixed */
+        }
+
+        .content {
+            margin-top: 150px; /* Adds space below the navbar initially */
+            height: 2000px; /* For scrolling effect */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        I'm a sticky navbar that will stick after scrolling past!
+    </div>
+
+    <div class="content">
+        Scroll down to see the effect. The navbar will become sticky once the top of it reaches the top of the page.
+    </div>
+
+    <script>
+        // Script to add sticky class when the top of the navbar reaches the top of the page
+        window.onscroll = function() {stickNavbar()};
+
+        var navbar = document.querySelector('.navbar');
+        var sticky = navbar.offsetTop; // Position when to make it sticky (top of the navbar)
+
+        function stickNavbar() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        }
+    </script>
+
+</body>
+</html>

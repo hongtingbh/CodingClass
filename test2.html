@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar After Scrolling</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 2000px; /* For scrolling effect */
+        }
+
+        .navbar {
+            top: 100px;
+            position: relative; /* Initially, normal positioning */
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        .navbar.sticky {
+            position: fixed; /* Makes navbar fixed when sticky */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensure full width when fixed */
+        }
+
+        .content {
+            margin-top: 150px; /* Adds space below the navbar initially */
+            height: 2000px; /* For scrolling effect */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        I'm a sticky navbar that will stick after scrolling past!
+    </div>
+
+    <div class="content">
+        Scroll down to see the effect. The navbar will become sticky once the top of it reaches the top of the page.
+    </div>
+
+    <script>
+        // Script to add sticky class when the top of the navbar reaches the top of the page
+        window.onscroll = function() {stickNavbar()};
+
+        var navbar = document.querySelector('.navbar');
+        var content = document.querySelector('.content');
+        var sticky = navbar.offsetTop - 100; // Adjust sticky position based on navbar's initial top (100px offset)
+
+        function stickNavbar() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add('sticky');
+                content.style.paddingTop = navbar.offsetHeight + 'px'; // Add padding to the content to prevent jump
+            } else {
+                navbar.classList.remove('sticky');
+                content.style.paddingTop = '150px'; // Reset padding-top to original space
+            }
+        }
+    </script>
+
+</body>
+</html>
