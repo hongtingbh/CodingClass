@@ -13,6 +13,7 @@
 		<style>
 			html {
   				scroll-behavior: smooth;
+				scroll-padding-top: 30px; /* Adjust this value as needed */
 			}
 		body {
             font-family: Arial, sans-serif;
@@ -134,19 +135,17 @@
 							
 								<ul class="actions">
 									<li><a href="#Courses" class="button">Course List</a></li>
-									<li><a href="#" class="button">Pricing</a></li>
 									<li><a href="#Registration" class="button">Registration</a></li>
-									
-									
+									<li><a href="#Contact" class="button">Contact</a></li>
 								</ul>
 								
 							
 						</section>
 
 				</div>
-				<button onclick="toggleSection()">Expand</button>
+				<!-- <button onclick="toggleSection()">Expand</button>
 				<div id="expandable" class="expandable">
-					<p>This is the hidden content that expands smoothly below the button.</p>
+					<p>This is the hidden content that expands smoothly below the button.</p> -->
 				</div>
 			
 			
@@ -159,7 +158,7 @@
 									<!-- <a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" /></a> -->
 								</div>
 								<header>
-									<h2 id="Courses">Available Courses</h2>
+									<h2 id="About">About me</h2>
 								</header>
 								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
 								sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
@@ -196,40 +195,63 @@
 				</div> -->
 
 			<!-- Features 2 -->
-				<!-- <div class="wrapper">
+				<div class="wrapper">
 					<section class="container">
 						<header class="major">
-							<h2>d magna consequat lorem curabitur tempus</h2>
-							<p>Elit aliquam vulputate egestas euismod nunc semper vehicula lorem blandit</p>
+							<h2 id="Courses">Courses</h2>
 						</header>
 						<div class="row features">
-							<section class="col-4 col-12-narrower feature">
+							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper first">
 									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
+								<p>Beginner Courses - 8 classes <span style="font-weight: bold;">$300</span></p>
+								<ul>
+									<li>Python Level 1</li>
+									<li>Java Level 1</li>
+									<li>C++ Level 1</li>
+									<li>Roblox Level 1</li>
+									<li>Web Development Level 1</li>
+								</ul>
 							</section>
-							<section class="col-4 col-12-narrower feature">
+							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper">
 									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
 								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
+								<p>Intermediate Courses - 8 classes <span style="font-weight: bold;">$350</span></p>
+								<ul>
+									<li>Python Level 2</li>
+									<li>Java Level 2</li>
+									<li>C++ Level 2</li>
+									<li>Roblox Level 2</li>
+									<li>Web Development Level 2</li>
+									<li>AI Fundamentals (coming soon)</li>
+								</ul>
+								  
 							</section>
-							<section class="col-4 col-12-narrower feature">
+							<!-- <section class="col-4 col-12-narrower feature">
 								<div class="image-wrapper">
 									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
 								</div>
 								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
 								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section>
+							</section> -->
 						</div>
-						<ul class="actions major">
-							<li><a href="#" class="button">Elevate my awareness</a></li>
+						<header class="major">
+							<h3 style="color:#F35858">Refund policy</h3>
+						</header>
+						<ul>
+							<li><span style="font-weight: bold;">No Refunds for Missed Classes:</span> If a student misses a class, no refunds will be provided. However, rescheduling is allowed with a 24-hour notice prior to the class.</li>
+							<li><span style="font-weight: bold;">Full Refund: </span>If a student withdraws before the first class, a full refund will be issued.</li>
+							<li><span style="font-weight: bold;">Pro-Rated Refund: </span>If a student withdraws after the first class or becomes unsatisfied, a pro-rated refund will be issued, minus a 10% administrative fee.</li>
+							<li><span style="font-weight: bold;">Cancellations by Instructor: </span>If a class is canceled by the instructor, students will receive either a full refund or a free rescheduled class.</li>
 						</ul>
+						<!-- <ul class="actions major">
+							<li><a href="#" class="button">Elevate my awareness</a></li>
+						</ul> -->
+							
 					</section>
-				</div> -->
+				</div>
 
 			<!-- Footer -->
 				<div id="footer-wrapper">
@@ -261,32 +283,35 @@
 									</div>
 								</form>
 							</section>
-							<header class="major">
-								<h2 id="Contact">Contact</h2>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel sem sit<br />
-								dolor neque semper magna lorem ipsum feugiat veroeros lorem ipsum dolore.</p>
-							</header>
-							<section class="col-6 col-12-narrower">
+
+						</div>
+					</div>
+				</div>
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<div id="footer" class="container">
+						<header class="major">
+							<h2 id="Contact">Contact</h2>
+							<!-- <p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel sem sit<br />
+							dolor neque semper magna lorem ipsum feugiat veroeros lorem ipsum dolore.</p> -->
+						</header>
+						<div class="row">
+							<section class="col-12 col-12-narrower">
 								<div class="row gtr-0">
-									
-									<ul class="divided icons col-6 col-12-mobile">
+									<ul class="divided icons col-4 col-12-mobile">
 										<li class="icon brands fa-linkedin-in"><a href="https://www.linkedin.com/in/brandonht/">LinkedIn</a></li>
-										<li class="icon brands fa-facebook-f"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
-										<li class="icon brands fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
 									</ul>
-									<!-- <ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
-										<li class="icon brands fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
-										<li class="icon brands fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li> -->
+									<ul class="divided icons col-4 col-12-mobile">
+										<li class="icon fa fa-envelope"><a href="mailto:hongting.bh@gmail.com">hongting.bh@gmail.com</a></li>
+									</ul>
+									<ul class="divided icons col-4 col-12-mobile">
+										<li class="fa fa-phone"></li>647-992-2037</li>
+									</ul>
+
 									</ul>
 								</div>
 							</section>
 						</div>
-					</div>
-					<div id="copyright" class="container">
-						<ul class="menu">
-							<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-						</ul>
 					</div>
 				</div>
 
