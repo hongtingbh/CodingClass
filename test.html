@@ -1,65 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Navbar After Scrolling</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            height: 2000px; /* For scrolling effect */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion Example</title>
+  <style>
+    /* Style the button that will be clicked */
+    .accordion {
+      background-color: #f1f1f1;
+      color: #444;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      margin-bottom: 5px;
+      transition: background-color 0.3s;
+    }
 
-        .navbar {
-            position: relative; /* Initially, normal positioning */
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 10px 15px;
-            text-align: center;
-            font-size: 18px;
-            z-index: 1000;
-        }
+    /* Add a color change effect when hovered */
+    .accordion:hover {
+      background-color: #ddd;
+    }
 
-        .navbar.sticky {
-            position: fixed; /* Makes navbar fixed when sticky */
-            top: 0;
-            left: 0;
-            width: 100%; /* Ensure full width when fixed */
-        }
+    /* The container for the collapsible content */
+    .panel {
+      padding: 0 18px;
+      display: none; /* Hidden by default */
+      background-color: #f9f9f9;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      max-height: 0; /* Initially collapsed */
+    }
 
-        .content {
-            margin-top: 150px; /* Adds space below the navbar initially */
-            height: 2000px; /* For scrolling effect */
-        }
-    </style>
+    /* This is to ensure that the panel has a smooth transition */
+    .panel.open {
+      display: block;
+      max-height: 500px; /* Arbitrary high value for smooth expansion */
+    }
+  </style>
 </head>
 <body>
 
-    <div class="navbar">
-        I'm a sticky navbar that will stick after scrolling past!
-    </div>
+  <!-- Accordion Button -->
+  <button class="accordion">Click to Expand/Collapse</button>
+  <div class="panel">
+    <p>This content will be shown or hidden when you click the button above.</p>
+  </div>
+  <p>This content will be shown or hidden when you click the button above.</p>
 
-    <div class="content">
-        Scroll down to see the effect. The navbar will become sticky once the top of it reaches the top of the page.
-    </div>
-
-    <script>
-        // Script to add sticky class when the top of the navbar reaches the top of the page
-        window.onscroll = function() {stickNavbar()};
-
-        var navbar = document.querySelector('.navbar');
-        var sticky = navbar.offsetTop; // Position when to make it sticky (top of the navbar)
-
-        function stickNavbar() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add('sticky');
-            } else {
-                navbar.classList.remove('sticky');
-            }
-        }
-    </script>
+  <script>
+    // Get all elements with the class 'accordion'
+    var acc = document.getElementsByClassName("accordion");
+    
+    // Loop through all accordion elements and add an event listener
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        // Toggle the "active" class to change the button style
+        this.classList.toggle("active");
+    
+        // Get the panel associated with the clicked button
+        var panel = this.nextElementSibling;
+    
+        // Toggle the 'open' class to control the expansion
+        panel.classList.toggle('open');
+      });
+    }
+  </script>
 
 </body>
 </html>

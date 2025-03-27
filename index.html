@@ -10,51 +10,61 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
 		<style>
 			html {
   				scroll-behavior: smooth;
 				scroll-padding-top: 30px; /* Adjust this value as needed */
 			}
-		body {
-            font-family: Arial, sans-serif;
-        }
+			body {
+				font-family: Arial, sans-serif;
+			}
 
-		
-        button {
-            padding: 10px 15px;
-            border: none;
-            background-color: #F08C89;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
+			
 
-        button:hover {
-            background-color: rgb(255, 255, 255);
-			color: #F08C89;
-			border:#F08C89;
-        }
 
-        #expandable {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            background-color: #f9f9f9;
-            padding: 0 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
 
-        #expandable.show {
-            max-height: 150px; /* Adjust as needed */
-            padding: 10px 15px;
-        }
+
+			.accordion {
+			background-color: #f1f1f1;
+			color: #444;
+			cursor: pointer;
+			padding: 10px;
+			width: 100%;
+			text-align: left;
+			border: none;
+			outline: none;
+			font-size: 15px;
+			margin-bottom: 5px;
+			transition: background-color 0.3s;
+			}
+
+			/* Add a color change effect when hovered */
+			.accordion:hover {
+			background-color: #ddd;
+			}
+
+			/* The container for the collapsible content */
+			/* Make sure the panel is hidden by default and that max-height is properly set */
+			.panel {
+				padding: 0 18px;
+				display: block; /* This should be block by default */
+				background-color: #f9f9f9;
+				overflow: hidden;
+				max-height: 0; /* Initially collapsed */
+				transition: max-height 0.3s ease-out;
+			}
+
+			/* Use scrollHeight dynamically for smooth transition */
+			.panel.open {
+				max-height: 500px; /* Arbitrary large value */
+			}
+
 		
 		</style>
 	</head>
 	<body class="homepage is-preload">
+		
 		<!-- <script>
 			// Script to add sticky class when the top of the navbar reaches the top of the page
 			window.onscroll = function() {stickNavbar()};
@@ -70,14 +80,8 @@
 				}
 			}
 		</script> -->
-		<script>
-			function toggleSection() {
-				var section = document.getElementById("expandable");
-				section.classList.toggle("show");
-			}
-		</script>
 
-    
+		
 		<!-- <div class="navbar">
 			<ul class="actions">
 				<li><a href="#" class="button">Course List</a></li>
@@ -87,6 +91,7 @@
 				
 			</ul>
 		</div> -->
+		
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -205,23 +210,27 @@
 						<div class="row features">
 							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper first">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<img class="image featured" src="images/scratch.jpg" alt="" />
 								</div>
-								<p>Beginner Courses - 8 classes <span style="font-weight: bold;">$240</span></p>
+								<h3>Beginner</h3>
+								<p>8 classes weekly | 1.5 hours per class <span style="font-weight: bold;">$240</span></p>
 								<ul>
+									<li>Scratch Level 1</li>
 									<li>Python Level 1</li>
 									<li>Java Level 1</li>
 									<li>C++ Level 1</li>
+									<li>Python Game Development</li>
 									<li>Roblox Game Development Level 1</li>
 									<li>Web Development Level 1</li>
 								</ul>
 							</section>
 							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<img class="image featured" src="images/python.jpg" alt="" />
 								</div>
-								<p>Intermediate Courses - 8 classes <span style="font-weight: bold;">$300</span></p>
-								<ul>
+								<h3>Intermediate</h3>
+								<p>8 classes weekly | 1.5 hours per class <span style="font-weight: bold;">$300</span></p>
+								<ul >
 									<li>Python Level 2</li>
 									<li>Java Level 2</li>
 									<li>C++ Level 2</li>
@@ -229,15 +238,98 @@
 									<li>Web Development Level 2</li>
 									<li>AI Fundamentals (coming soon)</li>
 								</ul>
-								  
+
+							<!-- Lv1 Outlines -->
 							</section>
-							<!-- <section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<section class="col-6 col-12-narrower feature">
+								<button class="accordion"><i class="fas fa-plus"></i> &nbsp&nbsp&nbspLevel 1 
+									Scratch/Python/Java/C++</button>
+								<div class="panel">
+									<ul style="text-align: left; margin-top: 20px;">
+										<li>1. Introduction, Variables</li>
+										<li>2. If/else if statements</li>
+										<li>3. Else/Nested if statements</li>
+										<li>4. Loops</li>
+										<li>5. Lists and Tuples</li>
+										<li>6. Functions/Methods</li>
+										<li>7. Functions/Methods P.2</li>
+										<li>8. Final Project</li>
+									</ul>
 								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section> -->
+								<button class="accordion"><i class="fas fa-plus"></i> &nbsp&nbsp&nbspLevel 1 
+									Game Development</button>
+								<div class="panel">
+									<ul style="text-align: left; margin-top: 20px;">
+										<li>1: Introduction to Game Development</li>
+										<li>2: Basic Programming Concepts</li>
+										<li>3: Game Loop Basics</li>
+										<li>4: Conditional Statements</li>
+										<li>5: Loops in Game Development</li>
+										<li>6: Working with Game Objects</li>
+										<li>7: Simple Collision Detection</li>
+										<li>8: Final Project: Create Your First Game</li>
+									</ul>
+								</div>
+								<button class="accordion"><i class="fas fa-plus"></i> &nbsp&nbsp&nbspLevel 1 
+									Web Development</button>
+								<div class="panel">
+									<ul style="text-align: left; margin-top: 20px;">
+										<li>1: Logistics & Introduction</li>
+										<li>2: Introduction to HTML</li>
+										<li>3: Adding Media</li>
+										<li>4: Advanced HTML</li>
+										<li>5: Introduction to CSS</li>
+										<li>6: Advanced CSS</li>
+										<li>7: Final Project</li>
+										<li>8: Final Project Showcase</li>
+									</ul>
+								</div>
+							</section>
+							<!-- Lv2 Outlines -->
+							<section class="col-6 col-12-narrower feature">
+								<button class="accordion"><i class="fas fa-plus"></i> &nbsp&nbsp&nbspLevel 2 
+									Python/Java/C++</button>
+								<div class="panel">
+									<ul style="text-align: left; margin-top: 20px;">
+										<li>1. Intro and Review Exercises</li>
+										<li>2. List Operations</li>
+										<li>3. Classes, Constructors</li>
+										<li>4. Objects and Object Variables</li>
+										<li>5. Getters/Setters</li>
+										<li>6. Complex Methods</li>
+										<li>7. File Handling</li>
+										<li>8. Final Project</li>
+									</ul>
+								</div>
+								<button class="accordion"><i class="fas fa-plus"></i> &nbsp&nbsp&nbspLevel 2 
+									Game Development</button>
+								<div class="panel">
+									<ul style="text-align: left; margin-top: 20px;">
+										<li>1: Introduction to Advanced Roblox</li>
+										<li>2: Basic Scripting with Lua</li>
+										<li>3: Creating and Customizing Game Objects</li>
+										<li>4: Player Input and Movement</li>
+										<li>5: Game Logic and Triggers</li>
+										<li>6: Working with GUIs (Graphical User Interfaces)</li>
+										<li>7: Basic Game Mechanics and Features</li>
+										<li>8: Final Project: Build Your Roblox Game</li>
+									</ul>
+								</div>
+								<button class="accordion"><i class="fas fa-plus"></i> &nbsp&nbsp&nbspLevel 2 
+									Web Development</button>
+								<div class="panel">
+									<ul style="text-align: left; margin-top: 20px;">
+										<li>1: Responsive Design</li>
+										<li>2: Introduction to JavaScript</li>
+										<li>3: JavaScript DOM Manipulation</li>
+										<li>4: Advanced CSS (Flexbox, Grid)</li>
+										<li>5: JavaScript Functions and Events</li>
+										<li>6: Using APIs and Fetch</li>
+										<li>7: Final Project: Build a Dynamic Website</li>
+										<li>8: Final Project Showcase</li>
+									</ul>
+								</div>
+							</section>
 						</div>
 						<header class="major">
 							<h3 style="color:#F35858; font-weight: bold;">Refund policy</h3>
@@ -246,7 +338,7 @@
 							<li><span style="font-weight: bold;">No Refunds for Missed Classes:</span> If a student misses a class, no refunds will be provided. However, rescheduling is allowed with a 24-hour notice prior to the class.</li>
 							<li><span style="font-weight: bold;">Full Refund: </span>If a student withdraws before the first class, a full refund will be issued.</li>
 							<li><span style="font-weight: bold;">Pro-Rated Refund: </span>If a student withdraws after the first class or becomes unsatisfied, a pro-rated refund will be issued, minus a 10% administrative fee.</li>
-							<li><span style="font-weight: bold;">Cancellations by Instructor: </span>If a class is canceled by the instructor, students will receive either a full refund or a free rescheduled class.</li>
+							<li><span style="font-weight: bold;">Cancellations by Instructor: </span>If a class is cancelled by the instructor, students will receive either a full refund or a free rescheduled class.</li>
 						</ul>
 						<!-- <ul class="actions major">
 							<li><a href="#" class="button">Elevate my awareness</a></li>
@@ -254,31 +346,29 @@
 							
 					</section>
 				</div>
-
+				
 			<!-- Footer -->
 				<div id="footer-wrapper">
 					<div class="container">
 						<header class="major">
-							<h2 id="Registration">Registration</h2>
+							<h2 id="Registration">Request More Information</h2>
 						</header>
-						<div style="text-align: center; margin-bottom: 20px;">
-							<p>Please fill out the following form to register for our coding classes. This will help us understand your child's age, program of interest, and level of experience so we can match them with the appropriate class. I will be in contact with you via your preferred method of communication.</p>
+						<div style="text-align: left; margin-bottom: 20px;">
+							<p>Please fill out the following form to register for our coding classes. 
+								I will be in contact with you via your preferred method of communication. <br>
+								I welcome parents to schedule a consultation with me to discuss their child's 
+								learning goals, experience level, and any questions they may have. Feel free to 
+								reach out, and I'd be happy to help!</p>
 						</div>
-						
-							<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfAbsUgPGdisPioJ5--YDwq7PbDBIBKxvOMMw82Yan77dc6Hg/viewform?usp=header"
-							frameborder="0" style="width: 100%; max-width: 800px; height: 80vh; border: none;"></iframe>Loading…</iframe>
-						
-						
-						
+						<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfAbsUgPGdisPioJ5--YDwq7PbDBIBKxvOMMw82Yan77dc6Hg/viewform?usp=header"
+						frameborder="0" style="width: 100%; max-width: 800px; height: 75vh; border: none;"></iframe>Loading…</iframe>
 					</div>
 				</div>
-			<!-- Footer -->
+			<!-- CONTACT -->
 				<div id="footer-wrapper">
 					<div id="footer" class="container">
 						<header class="major">
 							<h2 id="Contact">Contact</h2>
-							<!-- <p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel sem sit<br />
-							dolor neque semper magna lorem ipsum feugiat veroeros lorem ipsum dolore.</p> -->
 						</header>
 						<div class="row">
 							<section class="col-12 col-12-narrower">
@@ -304,6 +394,32 @@
 		</div>
 
 		<!-- Scripts -->
+			 <!--Script for buttons -->
+			<script>
+				// Get all elements with the class 'accordion'
+				var acc = document.getElementsByClassName("accordion");
+		
+				// Loop through all accordion elements and add an event listener
+				for (var i = 0; i < acc.length; i++) {
+					acc[i].addEventListener("click", function() {
+						// Toggle the "active" class to change the button style
+						this.classList.toggle("active");
+		
+						// Get the panel associated with the clicked button
+						var panel = this.nextElementSibling;
+		
+						// Toggle the 'open' class to control the expansion
+						panel.classList.toggle('open');
+						
+						// Adjust max-height to allow smooth transition
+						if (panel.classList.contains('open')) {
+							panel.style.maxHeight = panel.scrollHeight + "px"; // Use scrollHeight for dynamic content height
+						} else {
+							panel.style.maxHeight = null;
+						}
+					});
+				}
+			</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
